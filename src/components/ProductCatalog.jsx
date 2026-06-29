@@ -6,7 +6,7 @@ const CATALOG_PRODUCTS = [
     name: 'Premium Wireless Headphones',
     price: 199.99,
     category: 'Audio',
-    emoji: '🎧',
+    image: '/products/headphones.png',
     description: 'Active noise-canceling headphones with high-fidelity sound and 40h battery life.',
     color: 'var(--accent-color)'
   },
@@ -15,7 +15,7 @@ const CATALOG_PRODUCTS = [
     name: 'Ergonomic Mechanical Keyboard',
     price: 129.50,
     category: 'Peripherals',
-    emoji: '⌨️',
+    image: '/products/keyboard.png',
     description: 'Hot-swappable mechanical keyboard with custom switches and RGB backlighting.',
     color: '#3b82f6'
   },
@@ -24,7 +24,7 @@ const CATALOG_PRODUCTS = [
     name: 'Ultra-Wide Gaming Monitor 34"',
     price: 449.99,
     category: 'Displays',
-    emoji: '🖥️',
+    image: '/products/monitor.png',
     description: 'Curved QHD display with 144Hz refresh rate and HDR support for immersive gaming.',
     color: '#10b981'
   },
@@ -33,7 +33,7 @@ const CATALOG_PRODUCTS = [
     name: 'Smart Fitness Watch',
     price: 249.00,
     category: 'Wearables',
-    emoji: '⌚',
+    image: '/products/smartwatch.png',
     description: 'Advanced health tracking, built-in GPS, and up to 7 days of battery life.',
     color: '#f59e0b'
   },
@@ -42,7 +42,7 @@ const CATALOG_PRODUCTS = [
     name: 'Noise Cancelling Earbuds',
     price: 159.00,
     category: 'Audio',
-    emoji: '🎵',
+    image: '/products/earbuds.png',
     description: 'True wireless earbuds with customizable fit and smart touch controls.',
     color: '#ec4899'
   },
@@ -51,7 +51,7 @@ const CATALOG_PRODUCTS = [
     name: 'Professional USB Microphone',
     price: 119.00,
     category: 'Audio',
-    emoji: '🎙️',
+    image: '/products/microphone.png',
     description: 'Studio-quality condenser microphone for streaming, podcasting, and recording.',
     color: '#8b5cf6'
   },
@@ -60,7 +60,7 @@ const CATALOG_PRODUCTS = [
     name: 'Portable SSD 2TB',
     price: 179.99,
     category: 'Storage',
-    emoji: '💾',
+    image: '/products/ssd.png',
     description: 'Ultra-fast read/write speeds up to 1050MB/s in a rugged, compact design.',
     color: '#06b6d4'
   },
@@ -69,7 +69,7 @@ const CATALOG_PRODUCTS = [
     name: 'Ergonomic Office Chair',
     price: 349.50,
     category: 'Furniture',
-    emoji: '🪑',
+    image: '/products/chair.png',
     description: 'High-back mesh chair with adjustable lumbar support, 3D armrests, and tilt control.',
     color: '#14b8a6'
   }
@@ -156,9 +156,7 @@ export default function ProductCatalog({ onAddToCart }) {
           {filteredProducts.map(product => (
             <div key={product.id} className="product-card glass-card">
               <div className="product-visual animate-glow" style={{ '--accent-color-card': product.color }}>
-                <span className="product-emoji">
-                  {product.emoji}
-                </span>
+                <img src={product.image} alt={product.name} className="product-image" />
                 <span className="product-category-badge" style={{ backgroundColor: `${product.color}20`, color: product.color, border: `1px solid ${product.color}40` }}>
                   {product.category}
                 </span>

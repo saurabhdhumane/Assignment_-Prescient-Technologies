@@ -570,13 +570,16 @@
   border-bottom: 1px solid var(--border-subtle);
 }
 
-.product-emoji {
-  font-size: 64px;
+.product-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 12px;
   transition: transform var(--transition-normal);
 }
 
-.product-card:hover .product-emoji {
-  transform: scale(1.15) rotate(5deg);
+.product-card:hover .product-image {
+  transform: scale(1.06);
 }
 
 .product-category-badge {
