@@ -1,0 +1,97 @@
+:root {
+  /* HSL Color System - Light Theme */
+  --bg-primary: hsl(240, 20%, 97%);
+  --bg-secondary: hsl(240, 20%, 93%);
+  --bg-tertiary: hsl(240, 20%, 88%);
+  
+  --text-primary: hsl(240, 15%, 15%);
+  --text-secondary: hsl(240, 10%, 40%);
+  --text-muted: hsl(240, 8%, 55%);
+  
+  --accent-color: hsl(263, 75%, 55%);
+  --accent-glow: hsla(263, 75%, 55%, 0.12);
+  --accent-hover: hsl(263, 75%, 48%);
+  
+  --success-color: hsl(142, 60%, 35%);
+  --success-glow: hsla(142, 60%, 35%, 0.10);
+  --danger-color: hsl(350, 70%, 48%);
+  --danger-glow: hsla(350, 70%, 48%, 0.10);
+  
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-focus: hsla(263, 75%, 55%, 0.4);
+  
+  /* Glassmorphism settings - Light Theme */
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --glass-blur: blur(16px);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.06);
+  
+  /* Fonts */
+  --font-sans: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+  
+  /* Animations */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  min-height: 100vh;
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(263, 95%, 65%, 0.03) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(240, 95%, 65%, 0.03) 0px, transparent 50%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Common container elements */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* Focus Outline Style */
+input:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
